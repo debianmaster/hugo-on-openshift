@@ -5,7 +5,6 @@ ENV USER root
 
 RUN apk update && apk add git make
 
-# pre-install known dependencies before the source, so we don't redownload them whenever the source changes
 RUN go get github.com/kardianos/govendor \
  && govendor get github.com/spf13/hugo
 
@@ -13,5 +12,7 @@ COPY . $GOPATH/src/github.com/spf13/hugo
 
 RUN cd $GOPATH/src/github.com/spf13/hugo \
  	&& make install test
+
+ADD .s2i /usr/local/s2i
 
 ENTRYPOINT "/bin/sh"
