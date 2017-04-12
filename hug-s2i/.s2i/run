@@ -1,0 +1,2 @@
+#!/bin/bash -e
+hugo server -S /tmp/src/
