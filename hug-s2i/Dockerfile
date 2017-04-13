@@ -16,4 +16,4 @@ RUN cd $GOPATH/src/github.com/spf13/hugo \
 ADD .s2i/bin /usr/local/s2i
 LABEL io.openshift.s2i.scripts-url=file:///usr/local/s2i
 
-ENTRYPOINT "/bin/sh"
+CMD ["usage"]
