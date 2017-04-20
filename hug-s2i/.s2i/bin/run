@@ -1,1 +1,1 @@
-hugo server -S /tmp/src/
+hugo server -s /tmp/src/
