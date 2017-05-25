@@ -16,5 +16,5 @@ RUN cd $GOPATH/src/github.com/spf13/hugo \
 ADD .s2i/bin /usr/local/s2i
 LABEL io.openshift.s2i.scripts-url=image:///usr/local/s2i
 
-EXPOSE 1313
+EXPOSE 8080 1313
 CMD ["usage"]
