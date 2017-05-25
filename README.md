@@ -16,7 +16,7 @@ oc new-app debianmaster/hugo-base~https://github.com/debianmaster/hugo-example-s
 ### To override config.toml
 ```sh
 oc create configmap hugo-config --from-file=config.toml
-oc volume dc gohugo --add -m '/tmp/src/config.toml'   -t configmap --configmap-name 'hugo-config'
+oc volume dc gohugo --add -m '/tmp/config'   -t configmap --configmap-name 'hugo-config'
 ```
 
 ### Build your own base image
