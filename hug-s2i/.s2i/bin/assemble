@@ -1,1 +1,2 @@
-echo "Nothing to assemble!"
+mkdir /tmp/config
+cp /tmp/src/config.toml /tmp/config/config.toml
