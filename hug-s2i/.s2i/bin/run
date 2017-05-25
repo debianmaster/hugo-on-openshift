@@ -1,2 +1,2 @@
 #!/bin/sh
-hugo server --bind "0.0.0.0" -s /tmp/src/
+hugo server --bind "0.0.0.0" -s /tmp/src/ -p 8080
