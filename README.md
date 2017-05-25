@@ -1,10 +1,15 @@
 # hugo-on-openshift
 
 ### using debianmaster/hugo-base base image
+#### One time setup
 ```sh
 oc new-project hugo-test
 oc adm policy add-scc-to-user anyuid -z builder
 oc adm policy add-scc-to-user anyuid -z default
+```
+
+#### Convert hugo website to docker image and deploy
+```sh
 oc new-app debianmaster/hugo-base~https://github.com/debianmaster/hugo-example-site --name=gohugo
 ```
 
