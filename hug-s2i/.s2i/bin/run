@@ -1,2 +1,2 @@
 #!/bin/sh
-hugo server --bind "0.0.0.0" -s /tmp/src/ -p 8080 -b http://gohugo-myproject.10.0.0.145.xip.io
+hugo server --bind "0.0.0.0" -s /tmp/src/ -p 8080
