@@ -1,7 +1,8 @@
 FROM rhel8/go-toolset:latest
 
 ENV USER 1001
-RUN git clone https://github.com/gohugoio/hugo.git && cd hugo && go install --tags extended && cd .. && rm -rf hugo
+RUN curl https://github.com/gohugoio/hugo/releases/download/v0.65.1/hugo_0.65.1_Linux-64bit.tar.gz -o hugo_0.65.1_Linux-64bit.tar.gz \
+	&& mkdir bin && cd bin && tar xzf ../hugo_0.65.1_Linux-64bit.tar.gz
 
 ADD .s2i/bin /usr/local/s2i
 LABEL io.openshift.s2i.scripts-url=image:///usr/local/s2i
