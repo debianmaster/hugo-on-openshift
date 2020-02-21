@@ -2,7 +2,7 @@ FROM devtools/go-toolset-rhel7
 
 ENV USER root
 
-RUN scl list-collections ; go help ; echo GOPATH=$GOPATH && echo "pwd=`pwd`"
+RUN scl --help ; go help ; echo GOPATH=$GOPATH && echo "pwd=`pwd`"
 RUN go get -d github.com/gohugoio/hugo && go install github.com/gohugoio/hugo
 
 ADD .s2i/bin /usr/local/s2i
