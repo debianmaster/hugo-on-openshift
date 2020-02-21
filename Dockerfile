@@ -2,7 +2,7 @@ FROM rhel8/go-toolset:latest
 
 ENV USER 1001
 
-RUN scl list-collections
+RUN go help && which go && echo GOPATH=$GOPATH
 RUN scl enable go-toolset-7 "GOPATH=`realpath ~/go` go get -d github.com/gohugoio/hugo" \
 	&& scl enable go-toolset-7 "GOPATH=`realpath ~/go` go install github.com/gohugoio/hugo"
 
