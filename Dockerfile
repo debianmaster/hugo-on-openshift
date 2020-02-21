@@ -1,6 +1,8 @@
 FROM devtools/go-toolset-rhel7
 
-ENV USER root GOPATH "/opt/go"
+ENV GOPATH "/opt/go"
+
+USER root
 
 RUN mkdir -p $GOPATH && scl enable go-toolset-1.12 "go get github.com/gohugoio/hugo"
 
