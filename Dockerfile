@@ -1,8 +1,10 @@
 FROM rhel8/go-toolset:latest
 
 ENV USER 1001
-RUN curl https://github.com/gohugoio/hugo/releases/download/v0.65.1/hugo_0.65.1_Linux-64bit.tar.gz -o hugo_0.65.1_Linux-64bit.tar.gz \
-	&& mkdir bin && cd bin && tar xzf ../hugo_0.65.1_Linux-64bit.tar.gz
+
+RUN scl list-collections
+RUN scl enable go-toolset-7 "GOPATH=`realpath ~/go` go get -d github.com/gohugoio/hugo" \
+	&& scl enable go-toolset-7 "GOPATH=`realpath ~/go` go install github.com/gohugoio/hugo"
 
 ADD .s2i/bin /usr/local/s2i
 LABEL io.openshift.s2i.scripts-url=image:///usr/local/s2i
