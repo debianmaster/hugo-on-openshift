@@ -2,7 +2,7 @@ FROM devtools/go-toolset-rhel7
 
 ENV USER root
 
-RUN scl -l ; go help ; echo GOPATH=$GOPATH && echo "pwd=`pwd`"
+RUN scl enable go-toolset-1.12 "go help ; echo GOPATH=$GOPATH"
 RUN go get -d github.com/gohugoio/hugo && go install github.com/gohugoio/hugo
 
 ADD .s2i/bin /usr/local/s2i
